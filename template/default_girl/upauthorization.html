@@ -1,0 +1,29 @@
+{include ../common/head.html}
+{include menu.html}
+<div style="width:500px;margin:50px auto;margin-top:200px;border:2px solid #999;background:#E4E4E4;text-align:center;padding:10px;">
+
+	<div style="text-align:left;font-size:16px;font-weight:bold;">
+    	资料修改
+    </div>
+	<div style="line-height:4em;">
+		<form action="{const.DIARY_ROOT_REF}index.php?m=diary&a=doupauthorization" method="post" submittype="ajax">
+		    {foreach $sessionId $y}
+		     {if $sessionNow==$y } <font color='red'>MySession:</font>{else} SessionID: {/if}<input type="text" class="text" name="sessionId[]" value='{$y}'/><br/>
+			{foreachelse}
+				没有数据!</br>
+			{/foreach}
+			 <font color='red'>MySession:</font> 
+			 {if !$dis}<input type="text" class="text" name="sessionId[]" value='{$sessionNow}'/><br/>{else}<font color='red'>SessionID已经绑定！</font></br>{/if}
+            <input type="submit" class="button" value="确定" />
+            <input type="button" class="button" value="退出" onclick="tourl('index.php?m=index&a=logout')" />
+        </form>
+	</div>
+	<div style="text-align:right;">
+    	<a href="javascript:history.go(-1);" style="color:#666;">{lang return}</a>
+    	<a href="index.php" style="color:#666;">{lang home}</a>
+    </div>
+
+
+
+</div>
+{include ../common/foot.html}

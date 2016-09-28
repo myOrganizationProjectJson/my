@@ -1,0 +1,19 @@
+<div id="menu">
+	<li><a href="{const.DIARY_ROOT_REF}index.php">{lang view}</a></li>
+	<li><a href="{const.DIARY_ROOT_REF}index.php?m=diary&a=browser&year={$y}&month={$m}&day={$d}">当天</a></li>
+	<li><a href="{const.DIARY_ROOT_REF}index.php?m=diary&a=browser&year={$y}&month={$m}">当月</a></li>
+    {if G('userid')}
+	<li><a href="{const.DIARY_ROOT_REF}index.php?m=diary&a=add">{lang add}</a></li>
+    {/if}
+  
+    {if G('userid')}
+      {if G('userupid')}
+   		 <li><a href="{const.DIARY_ROOT_REF}index.php?m=diary&a=upconfig">修改</a></li>
+   		 <li><a href="{const.DIARY_ROOT_REF}index.php?m=diary&a=upauthorization">权限</a></li>
+   		 <li><a href="javascript:void(0);" onclick="$.get('{const.DIARY_ROOT_REF}index.php?m=index&a=cache',{},function(d){dialog.alert('{lang operate}{lang success}');});">{lang cache}</a></li>	
+      {/if}
+    	<li><a href="{const.DIARY_ROOT_REF}index.php?m=index&a=logout">{lang logout}</a></li>	
+    {else}
+    	<li><a href="{const.DIARY_ROOT_REF}index.php?m=index&a=login">{lang login}</a></li>
+    {/if}
+</div>

@@ -1,0 +1,52 @@
+<div id="menu">
+	<li><a href="{const.DIARY_ROOT_REF}index.php">{lang view}</a></li>
+	<li><a href="{const.DIARY_ROOT_REF}index.php?m=diary&a=browser&year={$y}&month={$m}&day={$d}">当天</a></li>
+	<li><a href="{const.DIARY_ROOT_REF}index.php?m=diary&a=browser&year={$y}&month={$m}">当月</a></li>
+    {if G('userid')}
+	<li><a href="{const.DIARY_ROOT_REF}index.php?m=diary&a=add">{lang add}</a></li>
+    {/if}
+  
+    {if G('userid')}
+      {if G('userupid')}
+   		 <li><a href="{const.DIARY_ROOT_REF}index.php?m=diary&a=upconfig">修改</a></li>
+   		 <li><a href="{const.DIARY_ROOT_REF}index.php?m=diary&a=upauthorization">权限</a></li>
+   		 <li><a href="javascript:void(0);" onclick="$.get('{const.DIARY_ROOT_REF}index.php?m=index&a=cache',{},function(d){dialog.alert('{lang operate}{lang success}');});">{lang cache}</a></li>	
+      {/if}
+    	<li><a href="{const.DIARY_ROOT_REF}index.php?m=index&a=logout">{lang logout}</a></li>	
+    {else}
+    	<li><a href="{const.DIARY_ROOT_REF}index.php?m=index&a=login">{lang login}</a></li>
+    {/if}
+</div>
+
+<script>
+jQuery(document).keypress(function(e){
+	if(e.ctrlKey && e.which == 13 || e.which == 10) {
+		 // window.location.href='{const.DIARY_ROOT_REF}index.php?m=diary&a=add';
+		editor.sync();
+		$('form').submit();
+S	} else if (e.shiftKey && e.which==13 || e.which == 10) {
+		   window.location.href='{const.DIARY_ROOT_REF}index.php?m=diary&a=add';
+		  // window.location.href='{const.DIARY_ROOT_REF}index.php?m=diary&a=browser&year={$y}&month={$m}&day={$d}';
+	} else if (e.shiftKey && e.which==76 || e.which == 10) {
+		   window.location.href='{const.DIARY_ROOT_REF}index.php?m=index&a=logout';
+	}else if (e.shiftKey && e.which==68 || e.which == 10) {
+		   window.location.href='{const.DIARY_ROOT_REF}index.php?m=diary&a=browser&year={$y}&month={$m}&day={$d}';
+	}else if (e.shiftKey && e.which==77 || e.which == 10) {
+		   window.location.href='{const.DIARY_ROOT_REF}index.php?m=diary&a=browser&year={$y}&month={$m}';
+	}else if (e.shiftKey && e.which==69 || e.which == 10) {
+		   window.location.href='{const.DIARY_ROOT_REF}index.php?m=diary&a=edit&year={$y}&month={$m}&day={$d}';
+	}else if (e.shiftKey && e.which==89 || e.which == 10) {
+		   window.location.href='{const.DIARY_ROOT_REF}index.php?m=diary&a=browser&year={$y}';
+	}else if (e.shiftKey && e.which==65 || e.which == 10) {
+		  window.location.href='{const.DIARY_ROOT_REF}index.php?m=diary&a=add';
+	}else if (e.shiftKey && e.which==83 || e.which == 10) {
+		  window.location.href='{const.DIARY_ROOT_REF}index.php?m=diary&a=add';
+	}else if (e.shiftKey && e.which==70 || e.which == 10) {
+		 // $('.text:first').focus();
+		 
+		 
+	}	
+});
+//键码获取/*
+//$(document).keydown(function (event) {  alert(event.keyCode);});
+</script>

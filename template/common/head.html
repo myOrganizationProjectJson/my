@@ -1,0 +1,31 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset={const.DIARY_CHARSET}" />
+<script language="javascript">var ROOT='{const.DIARY_ROOT_REF}';</script>
+<script language="javascript" src="{const.DIARY_ROOT_REF}lib/js.js"></script>
+<title>{lang site_title} - {global page_title}</title>
+<link type="text/css" rel="stylesheet" href="{const.DIARY_ROOT_REF}lib/common.css" />
+<link type="text/css" rel="stylesheet" href="{const.DIARY_ROOT_REF}template/{const.DIARY_STYLE}/style.css" />
+<script>
+$(document).ready(function(){  $('.text:first').focus(); });
+</script>
+
+<script>
+jQuery(document).keypress(function(e){
+	 if (e.shiftKey && e.which==70 || e.which == 10) {
+		  $('.text:first').focus();
+	}	
+});
+//键码获取/*
+//$(document).keydown(function (event) {  alert(event.keyCode);});
+</script>
+</head>
+<body>
+{include copyright.html}
+<div id="site_title" onclick="javascript:window.location.href='index.php?m=index&a=logout'" style='cursor:pointer;'>
+{lang site_title}
+</div>
+<div id="site_description" onclick="javascript:window.location.href='index.php?m=index&a=logout'" style='cursor:pointer;'>
+{lang site_description}
+</div>

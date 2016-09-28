@@ -1,0 +1,60 @@
+{include ../common/head.html}
+
+{include menu.html}
+
+{include year.html}
+
+{include empty_content.html}
+
+<div id="month">
+	{foreach $yeardetial $m $d}
+    	<li {if $month==$m}class="focus"{/if}><a href="index.php?m=diary&a=browser&year={$year}&month={$m}">{$m}{lang month}</a></li>
+    {foreachelse}
+    	{lang no}{lang diary}
+    {/foreach}
+</div>
+
+{if $month && isset($yeardetial[$month])}
+<div id="day">
+	{foreach $yeardetial[$month] $m $md}
+    	{eval $d=substr($md,0,-4);}
+    	<li {if $day==$d}class="focus"{/if}><a href="index.php?m=diary&a=browser&year={$year}&month={$month}&day={$d}">{$d}{lang day}</a></li>
+    {foreachelse}
+    	{lang no}{lang diary}
+    {/foreach}
+</div>
+{/if}
+
+{if $diary_view}
+<div id="diary_view">
+	<div class="datetime">{lang datetime}:{$year}-{$month}-{$day}</div>
+	<div class="edittime">{lang edittime}:{eval echo date('Y-m-d H:i',$diary_view['edittime'])}</div>
+    {if G('userid')}
+    <div class="operate">
+    	<a href="index.php?m=diary&a=edit&year={$year}&month={$month}&day={$day}">{lang edit}</a>
+    	<a href="javascript:void(0);" onclick="delete_diary();">{lang delete}</a>
+        <script language="javascript">
+		function delete_diary()
+		{
+			if(confirm("确定要删除吗？"))
+			 {
+			$.get('index.php?m=diary&a=delete&year={$year}&month={$month}&day={$day}',
+				  {},function(d){
+					  if('ok'==d){
+						 	dialog.alert('{lang delete}{lang success}',''
+										 ,'tourl(\'index.php?m=diary&a=browser&year={$year}&month={$month}\')');
+					  }else{
+						    dialog.alert(d);
+				      }
+				});	
+			 }
+		}
+		</script>
+    </div>
+    {/if}
+    <div class="content">{$diary_view['content']}</div>
+</div>
+{/if}
+
+
+{include ../common/foot.html}

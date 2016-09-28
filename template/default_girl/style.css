@@ -1,0 +1,46 @@
+body{background-color:#FDF6E6;background-image:url(images/bg_head.jpg);background-repeat:no-repeat;background-position:top left;font-family:"Lucida Grande", Verdana, Lucida, Arial, Helvetica, 微软雅黑,宋体,sans-serif;}
+a{color:#FF6868;text-decoration:none;}
+a:hover{text-decoration:underline;}
+
+#menu{position:absolute;left:50px;top:180px;}
+#menu li{padding:5px;}
+#menu li a{font-size:20px;font-weight:bold;}
+
+#year{position:absolute;left:110px;top:200px;color:#FF6868;}
+#year li{padding:2px 5px;font-size:16px;font-weight:bold;}
+#year li.focus{border:1px solid #FF6868;}
+
+#month{position:absolute;left:190px;top:200px;}
+#month li{padding:2px 5px;font-size:14px;font-weight:bold;}
+#month li.focus{border:1px solid #FF6868;}
+
+#day{position:absolute;left:300px;top:130px;}
+#day li{display:inline;padding:0 5px;}
+#day li.focus{background:#FC9;}
+
+#diary_view{position:absolute;left:280px;top:200px;color:#FF6868;margin-right:20px;}
+#diary_view .datetime{font-weight:bold;line-height:2em;}
+#diary_view .edittime{font-weight:bold;line-height:2em;}
+#diary_view .operate{line-height:2em;}
+#diary_view .operate a{color:#F00;}
+#diary_view .content{line-height:2em;padding-bottom: 80px;}
+
+#add_box{position:absolute;left:280px;top:180px;color:#FF6868;}
+
+#edit_box{position:absolute;left:280px;top:180px;color:#FF6868;}
+
+#diary_title{position:absolute;left:300px;top:130px;font-size:20px;font-weight:bold;color:#FF6868;}
+
+#empty_content{position:absolute;left:280px;top:180px;color:#FF6868;}
+#empty_content li a{text-decoration:none;}
+#empty_content li.year{font-size:20px;font-weight:bold;float:left;padding:5px 10px;}
+#empty_content li.year:hover{background:#FC9;}
+#empty_content li.month{font-size:20px;font-weight:bold;float:left;padding:5px 10px;}
+#empty_content li.month:hover{background:#FC9;}
+#empty_content li.day{font-size:20px;font-weight:bold;float:left;padding:5px 10px;}
+#empty_content li.day:hover{background:#FC9;}
+
+#copyright{position:absolute;right:0;bottom:0;color:#FF6868;}
+
+#site_title{position:absolute;color:#FF6868;top:50px;font-size:30px;font-weight:bold;right:30%;}
+#site_description{position:absolute;color:#FF6868;top:90px;font-size:14px;right:32%;}

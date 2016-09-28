@@ -1,0 +1,8 @@
+<div id="year">
+{foreach $years $y}
+	<li {if isset($year) && $year==$y}class="focus"{/if}><a href="index.php?m=diary&a=browser&year={$y}">{$y}{lang year}</a></li>
+{foreachelse}
+	{lang no}{lang diary}
+{/foreach}
+<li><a href="index.php?m=diary&amp;a=add" style="font-size: 28px;">添加</a></li>
+</div>

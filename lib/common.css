@@ -1,0 +1,41 @@
+@charset "utf-8"
+/******************************* common *******************************/
+*{margin:0;padding:0;word-wrap:break-word;word-break:break-all;outline:none;}
+body{color:#555; font-size:13px; font-family:"Lucida Grande", Verdana, Lucida, Arial, Helvetica,sans-serif;}
+ul,ol,li{list-style:none;}
+h1, h2, h3, h4, h5, h6{ font-size:14px; }
+a{color:#2366A8; text-decoration:none; }
+a:hover { text-decoration:underline; }
+a.hover_off{text-decoration:none;}
+a.hover_off:hover{text-decoration:none;}
+a img{ border:none; }
+em,cite,th{font-style:normal;font-weight:normal;text-align:left;}
+
+/* form inputs */
+textarea.text,input.text,input.file{padding:3px;margin:2px;font-family:Verdana, Geneva, sans-serif;}
+input.checkbox,input.radio{margin:2px;}
+input.button{padding:2px 10px;margin:2px;}
+select.select option{padding:0 5px;}
+
+/*pagebar*/
+.pagebar{margin:5px;padding:5px;}
+	.pagebar a,.pagebar span{padding:3px 5px;}
+	.pagebar a{color:#03F;border:1px solid #CCC;text-decoration:none;}
+	.pagebar a:hover{color:#F50;border:1px solid #F50;}
+	.pagebar span{background:#FFEEE5;color:#F50;border:1px solid #F50;}
+
+
+/******************************* layout *******************************/
+.left{float:left !important;}
+.right{float:right !important;}
+.clear{clear:both !important;}
+
+.white{color:white !important;}
+.black{color:black !important;}
+.red{color:red !important;}
+.gray{color:gray !important;}
+
+.line2em{line-height:2em　!important;}
+.line1_5em{line-height:1.5em !important;}
+
+.decnone{text-decoration:none !important;}

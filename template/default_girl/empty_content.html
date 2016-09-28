@@ -1,0 +1,40 @@
+<div id="empty_content">
+
+	{if (!isset($year) && !isset($month) && !isset($day)) || (!$year && !$month && !$day)}
+    	<div style="padding:5px;">
+        	{lang choose_year}
+        </div>
+        <div style="padding:10px;">
+        {foreach $years $y}
+            <li class="year"><a href="index.php?m=diary&a=browser&year={$y}">{$y}{lang year}</a></li>
+        {foreachelse}
+            {lang no}{lang diary}
+        {/foreach}	
+        </div>
+    {elseif isset($year) && $year && (!isset($month) || !$month)}
+    	<div style="padding:5px;">
+        	{lang choose_month}
+        </div>
+        <div style="padding:10px;">
+        {foreach $yeardetial $m $d}
+            <li class="month"><a href="index.php?m=diary&a=browser&year={$year}&month={$m}">{$m}{lang month}</a></li>
+        {foreachelse}
+            {lang no}{lang diary}
+        {/foreach}
+        </div>
+    {elseif isset($year) && $year && isset($month) && isset($yeardetial[$month]) && $month && (!isset($day) || !$day)}
+    	<div style="padding:5px;">
+        	{lang choose_day}
+        </div>
+        <div style="padding:10px;">
+        {foreach $yeardetial[$month] $m $md}
+            {eval $d=substr($md,0,-4);}
+            <li class="day"><a href="index.php?m=diary&a=browser&year={$year}&month={$month}&day={$d}">{$d}{lang day}</a></li>
+        {foreachelse}
+            {lang no}{lang diary}
+        {/foreach}
+        </div>
+    {/if}
+
+
+</div>

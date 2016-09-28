@@ -1,0 +1,1 @@
+<?php !defined("__TPL_IN__") && exit(); ?><?php include $GLOBALS['__TPL__']->inc('../common/head.html'); ?><?php include $GLOBALS['__TPL__']->inc('menu.html'); ?><?php include $GLOBALS['__TPL__']->inc('year.html'); ?><?php include $GLOBALS['__TPL__']->inc('empty_content.html'); ?><?php include $GLOBALS['__TPL__']->inc('../common/foot.html'); ?>
